@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgente S.R.L. — Equipamientos de Bombeo & Accesorios</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a6e;
+    --mid: #2456a4;
+    --accent: #1e88e5;
+    --light-blue: #e8f4fd;
+    --water: #64b5f6;
+    --white: #ffffff;
+    --off: #f4f7fc;
+    --gray: #8a9ab5;
+    --dark-text: #0d1f3c;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--white);
+    color: var(--dark-text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 22, 40, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 68px;
+    border-bottom: 1px solid rgba(100,181,246,0.15);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; font-weight: 900;
+    color: white; letter-spacing: -1px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 900;
+    color: white; letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .nav-logo-sub {
+    font-size: 9px; font-weight: 300;
+    color: var(--water); letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--water); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+  }
+
+  .nav-cta:hover { background: #1565c0 !important; color: white !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 68px 5% 0;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(30,136,229,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(36,86,164,0.2) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(100,181,246,1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100,181,246,1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 620px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(30,136,229,0.15);
+    border: 1px solid rgba(30,136,229,0.3);
+    color: var(--water);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--water);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(52px, 8vw, 88px);
+    font-weight: 900;
+    color: white;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero p {
+    font-size: 18px; font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 15px 36px;
+    border-radius: 4px;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 15px 36px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--water);
+    color: var(--water);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    position: absolute; right: 5%; top: 50%;
+    transform: translateY(-50%);
+    width: min(480px, 45vw);
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-stats {
+    position: absolute; bottom: 48px; left: 5%; right: 5%;
+    display: flex; gap: 48px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 32px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hero-stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px; font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 12px; font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* ─── WATER DIVIDER ─── */
+  .wave-divider {
+    display: block; width: 100%;
+    background: var(--navy);
+    line-height: 0;
+  }
+
+  .wave-divider svg { display: block; }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 5%; }
+
+  .section-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--dark-text);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px; font-weight: 300;
+    color: var(--gray);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ─── MARCAS ─── */
+  .marcas {
+    background: var(--off);
+    padding: 40px 5%;
+  }
+
+  .marcas-inner {
+    display: flex; align-items: center;
+    gap: 48px; flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .marcas-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gray);
+    white-space: nowrap;
+  }
+
+  .marca-pill {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 900;
+    color: var(--blue);
+    letter-spacing: 1px;
+    padding: 6px 20px;
+    border: 2px solid rgba(26,58,110,0.15);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .marca-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ─── PRODUCTOS ─── */
+  .productos { background: white; }
+
+  .productos-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 56px; flex-wrap: wrap; gap: 24px;
+  }
+
+  .cat-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .cat-tab {
+    padding: 8px 20px;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.12);
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+    color: var(--gray);
+  }
+
+  .cat-tab.active, .cat-tab:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .prod-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    background: white;
+    cursor: pointer;
+  }
+
+  .prod-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(30,136,229,0.12);
+    border-color: rgba(30,136,229,0.2);
+  }
+
+  .prod-img {
+    height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .prod-img-bg {
+    position: absolute; inset: 0;
+  }
+
+  .prod-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--accent);
+    color: white;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+  }
+
+  .prod-body { padding: 20px; }
+
+  .prod-marca {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .prod-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .prod-desc {
+    font-size: 14px; color: var(--gray);
+    line-height: 1.5; margin-bottom: 16px;
+  }
+
+  .prod-specs {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .spec-tag {
+    background: var(--light-blue);
+    color: var(--mid);
+    font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 100px;
+  }
+
+  .prod-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .prod-cta {
+    font-size: 13px; font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .prod-cta:hover { gap: 10px; }
+
+  /* ─── SERVICIOS ─── */
+  .servicios { background: var(--navy); position: relative; overflow: hidden; }
+
+  .servicios::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 90% 20%, rgba(30,136,229,0.1) 0%, transparent 60%);
+  }
+
+  .servicios .section-title { color: white; }
+  .servicios .section-sub { color: rgba(255,255,255,0.5); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+    position: relative; z-index: 1;
+  }
+
+  .serv-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(100,181,246,0.12);
+    border-radius: 12px;
+    padding: 36px 28px;
+    transition: all 0.3s;
+  }
+
+  .serv-card:hover {
+    background: rgba(30,136,229,0.1);
+    border-color: rgba(30,136,229,0.3);
+    transform: translateY(-4px);
+  }
+
+  .serv-icon {
+    width: 56px; height: 56px;
+    background: rgba(30,136,229,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .serv-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px; font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .serv-desc {
+    font-size: 15px; font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ─── POZOS ─── */
+  .pozos {
+    background: var(--off);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .pozos-content {
+    padding: 100px 6%;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .pozos-visual {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px;
+    position: relative; overflow: hidden;
+  }
+
+  .pozos-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,136,229,0.2) 0%, transparent 70%);
+  }
+
+  .pozo-diagram {
+    position: relative; z-index: 1;
+    text-align: center;
+  }
+
+  .pozo-layers {
+    display: flex; flex-direction: column; gap: 0;
+    width: 220px; margin: 0 auto;
+  }
+
+  .pozo-layer {
+    height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .layer-surface { background: rgba(139,100,20,0.6); color: #f5d47a; border-radius: 8px 8px 0 0; }
+  .layer-soil { background: rgba(101,67,10,0.6); color: #d4a96a; }
+  .layer-rock1 { background: rgba(80,80,80,0.6); color: #ccc; }
+  .layer-rock2 { background: rgba(60,60,60,0.7); color: #aaa; }
+  .layer-aquifer { background: rgba(30,136,229,0.5); color: #90caf9; border-radius: 0 0 8px 8px; font-weight: 700; }
+
+  .pozo-pipe {
+    width: 8px; height: 60px;
+    background: linear-gradient(90deg, #999, #ddd, #999);
+    margin: 0 auto;
+  }
+
+  .pozo-pump-icon {
+    font-size: 48px;
+    margin-top: 8px;
+  }
+
+  .pozos-steps {
+    margin-top: 40px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+
+  .step {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-text strong {
+    display: block;
+    font-size: 15px; font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 2px;
+  }
+
+  .step-text span {
+    font-size: 14px; color: var(--gray);
+  }
+
+  /* ─── POR QUÉ NOSOTROS ─── */
+  .porque { background: white; }
+
+  .porque-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 56px;
+  }
+
+  .porque-item {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  .porque-item:hover {
+    background: var(--light-blue);
+    transform: translateY(-4px);
+  }
+
+  .porque-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .porque-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+  }
+
+  .porque-desc {
+    font-size: 15px; color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ─── CONTACTO ─── */
+  .contacto {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+
+  .contacto::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(30,136,229,0.12) 0%, transparent 60%);
+  }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    position: relative; z-index: 1;
+  }
+
+  .contacto .section-title { color: white; }
+  .contacto .section-sub { color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+
+  .contact-info-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: rgba(30,136,229,0.15);
+    border: 1px solid rgba(30,136,229,0.2);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 16px; color: white; font-weight: 400;
+  }
+
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(100,181,246,0.1);
+    border-radius: 16px;
+    padding: 40px;
+  }
+
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-field {
+    margin-bottom: 16px;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(100,181,246,0.15);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: white;
+    transition: border-color 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--accent);
+    background: rgba(30,136,229,0.08);
+  }
+
+  .form-field select option { background: var(--navy); }
+
+  .form-field textarea { resize: vertical; min-height: 100px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #050e1c;
+    padding: 48px 5% 28px;
+    border-top: 1px solid rgba(100,181,246,0.08);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-about p {
+    font-size: 14px; color: rgba(255,255,255,0.4);
+    line-height: 1.7; margin-top: 16px;
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    font-size: 14px; color: rgba(255,255,255,0.6);
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--water); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap; gap: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px; color: rgba(255,255,255,0.25);
+  }
+
+  .footer-bottom a {
+    font-size: 12px; color: rgba(100,181,246,0.5);
+    text-decoration: none;
+  }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 58px; height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: all 0.3s;
+    animation: bounceIn 0.6s 1s both;
+  }
+
+  @keyframes bounceIn {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-visual { display: none; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    .pozos { grid-template-columns: 1fr; }
+    .pozos-visual { display: none; }
+    .contacto-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-mark">S</div>
+    <div>
+      <div class="nav-logo-text">SURGENTE</div>
+      <div class="nav-logo-sub">Equipamientos & Accesorios</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#pozos">Pozos Artesianos</a></li>
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Caaguazú, Paraguay</div>
+    <h1>
+      Fuerza<br>
+      que <em>mueve</em><br>
+      el agua
+    </h1>
+    <p>
+      Equipamientos de bombeo, accesorios, tuberías, medidores y perforación de pozos artesianos. Todo lo que necesitás, en un solo lugar.
+    </p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn-primary">Ver productos →</a>
+      <a href="#contacto" class="btn-outline">📞 Consultar ahora</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="opacity:0.18;">
+      <circle cx="200" cy="200" r="180" fill="none" stroke="#64b5f6" stroke-width="1"/>
+      <circle cx="200" cy="200" r="140" fill="none" stroke="#64b5f6" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="100" fill="none" stroke="#64b5f6" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="60" fill="rgba(30,136,229,0.3)" stroke="#1e88e5" stroke-width="1"/>
+      <text x="200" y="208" text-anchor="middle" fill="#64b5f6" font-size="48" font-family="serif">💧</text>
+    </svg>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num">10+</div>
+      <div class="hero-stat-label">Años en el rubro</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">KSB · Pedrollo</div>
+      <div class="hero-stat-label">Marcas líderes mundiales</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">1–10 HP</div>
+      <div class="hero-stat-label">Rango de potencia sumergibles</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">✓</div>
+      <div class="hero-stat-label">Servicio técnico especializado</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<div class="marcas" id="marcas">
+  <div class="marcas-inner">
+    <span class="marcas-label">Marcas oficiales</span>
+    <span class="marca-pill">KSB</span>
+    <span class="marca-pill">Pedrollo</span>
+    <span class="marca-pill">Valco</span>
+    <span class="marca-pill">SAH</span>
+    <span class="marca-pill">Boyu</span>
+    <span class="marca-pill">Grundfos</span>
+  </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+  <div class="productos-header">
+    <div>
+      <span class="section-tag">Catálogo</span>
+      <h2 class="section-title">Nuestros<br>productos</h2>
+    </div>
+    <div>
+      <p class="section-sub">Stock permanente de las principales marcas del mercado.</p>
+      <div class="cat-tabs">
+        <button class="cat-tab active" onclick="filterCat('todos')">Todos</button>
+        <button class="cat-tab" onclick="filterCat('sumergibles')">Sumergibles</button>
+        <button class="cat-tab" onclick="filterCat('motobombas')">Motobombas</button>
+        <button class="cat-tab" onclick="filterCat('accesorios')">Accesorios</button>
+        <button class="cat-tab" onclick="filterCat('tuberias')">Tuberías</button>
+        <button class="cat-tab" onclick="filterCat('medidores')">Medidores</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="productos-grid" id="prodGrid"></div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <span class="section-tag">Lo que hacemos</span>
+  <h2 class="section-title" style="color:white">Servicios<br>especializados</h2>
+  <p class="section-sub">Soluciones integrales para agua potable, riego, industria y sistemas contra incendio.</p>
+
+  <div class="servicios-grid">
+    <div class="serv-card reveal">
+      <div class="serv-icon">⚙️</div>
+      <div class="serv-title">Instalación de equipos</div>
+      <div class="serv-desc">Instalamos motobombas, electrobombas y sistemas de presurización con mano de obra calificada y garantía de trabajo.</div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon">🔧</div>
+      <div class="serv-title">Servicio técnico</div>
+      <div class="serv-desc">Diagnóstico, reparación y mantenimiento preventivo de equipos de todas las marcas que comercializamos.</div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon">🏗️</div>
+      <div class="serv-title">Perforación de pozos</div>
+      <div class="serv-desc">Perforación y equipamiento de pozos artesianos para hogares, industrias y agro. Consultoría y presupuesto sin costo.</div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon">🔥</div>
+      <div class="serv-title">Sistema contra incendio</div>
+      <div class="serv-desc">Diseño e instalación de sistemas hidráulicos contra incendio para industria, comercios y edificios.</div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon">💧</div>
+      <div class="serv-title">Agua potable y riego</div>
+      <div class="serv-desc">Sistemas completos de abastecimiento de agua para uso domiciliario, rural e industrial, con tuberías y accesorios de primera línea.</div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon">📐</div>
+      <div class="serv-title">Asesoramiento técnico</div>
+      <div class="serv-desc">Te ayudamos a elegir el equipo correcto según tu necesidad de caudal, presión y profundidad. Sin costo adicional.</div>
+    </div>
+  </div>
+</section>
+
+<!-- POZOS ARTESIANOS -->
+<div class="pozos" id="pozos">
+  <div class="pozos-content reveal">
+    <span class="section-tag">Especialidad</span>
+    <h2 class="section-title">Pozos<br>artesianos</h2>
+    <p class="section-sub" style="margin-bottom:32px">
+      Desde la perforación hasta el equipamiento completo. Trabajamos en toda la región de Caaguazú y zonas aledañas.
+    </p>
+    <div class="pozos-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Estudio y consultoría</strong>
+          <span>Evaluamos el terreno y definimos la profundidad necesaria.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Perforación</strong>
+          <span>Equipo especializado para pozos residenciales e industriales.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Equipamiento</strong>
+          <span>Instalación de bomba sumergible, cañería y tablero eléctrico.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Entrega y garantía</strong>
+          <span>Prueba final y soporte postventa incluido.</span>
+        </div>
+      </div>
+    </div>
+    <a href="#contacto" class="btn-primary" style="margin-top:36px; display:inline-flex">Solicitar presupuesto →</a>
+  </div>
+
+  <div class="pozos-visual">
+    <div class="pozo-diagram">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:20px">Perfil del terreno</div>
+      <div class="pozo-layers">
+        <div class="pozo-layer layer-surface">Superficie</div>
+        <div class="pozo-layer layer-soil">Suelo</div>
+        <div class="pozo-layer layer-rock1">Roca sedimentaria</div>
+        <div class="pozo-layer layer-rock2">Roca base</div>
+        <div class="pozo-layer layer-aquifer">Acuífero 💧</div>
+      </div>
+      <div class="pozo-pipe"></div>
+      <div class="pozo-pump-icon">⚡</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-top:8px">Bomba sumergible KSB / Pedrollo</div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUÉ NOSOTROS -->
+<section class="porque" id="porque">
+  <div style="text-align:center; max-width:600px; margin:0 auto">
+    <span class="section-tag">¿Por qué Surgente?</span>
+    <h2 class="section-title">Experiencia,<br>stock y servicio</h2>
+  </div>
+  <div class="porque-grid">
+    <div class="porque-item reveal">
+      <span class="porque-icon">🏆</span>
+      <div class="porque-title">Marcas premium</div>
+      <div class="porque-desc">Distribuimos KSB, Pedrollo, Valco y SAH — líderes mundiales con garantía de fábrica.</div>
+    </div>
+    <div class="porque-item reveal">
+      <span class="porque-icon">📦</span>
+      <div class="porque-title">Stock disponible</div>
+      <div class="porque-desc">Gran variedad en stock permanente. Sin esperas, con entrega inmediata para la mayoría de productos.</div>
+    </div>
+    <div class="porque-item reveal">
+      <span class="porque-icon">🛠️</span>
+      <div class="porque-title">Técnicos propios</div>
+      <div class="porque-desc">Equipo especializado en instalación y reparación, sin tercerizar el servicio.</div>
+    </div>
+    <div class="porque-item reveal">
+      <span class="porque-icon">📍</span>
+      <div class="porque-title">Presencia local</div>
+      <div class="porque-desc">Radicados en Caaguazú, atendemos toda la región con conocimiento real del territorio.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-grid">
+    <div>
+      <span class="section-tag">Contacto</span>
+      <h2 class="section-title">Hablemos<br>de tu proyecto</h2>
+      <p class="section-sub">Consultá sin compromiso. Te asesoramos para encontrar la solución correcta.</p>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Ubicación</div>
+          <div class="contact-value">Caaguazú, Paraguay</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">+595 9XX XXX XXX</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">📘</div>
+        <div>
+          <div class="contact-label">Facebook</div>
+          <div class="contact-value">Surgente Equipamientos</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Horario</div>
+          <div class="contact-value">Lun–Vie 7:30–17:30 · Sáb 8:00–12:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:700; color:white; margin-bottom:28px">
+        Solicitar presupuesto
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre">
+        </div>
+        <div class="form-field">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="+595 9XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>¿Qué necesitás?</label>
+        <select>
+          <option value="">Seleccioná una opción</option>
+          <option>Bomba sumergible</option>
+          <option>Motobomba / Electrobomba</option>
+          <option>Tubería y accesorios</option>
+          <option>Medidor de agua</option>
+          <option>Perforación de pozo artesiano</option>
+          <option>Sistema contra incendio</option>
+          <option>Servicio técnico / reparación</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Mensaje</label>
+        <textarea placeholder="Describí brevemente tu necesidad o proyecto..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%; justify-content:center" onclick="alert('¡Gracias! En un sitio real esto enviaría tu consulta directamente por WhatsApp o email.')">
+        Enviar consulta →
+      </button>
+      <p style="font-size:12px; color:rgba(255,255,255,0.3); text-align:center; margin-top:16px">
+        También podés escribirnos directamente por WhatsApp
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div style="display:flex; align-items:center; gap:10px">
+        <div style="width:36px; height:36px; background:linear-gradient(135deg,#1e88e5,#0d47a1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:900; color:white;">S</div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:900; color:white; letter-spacing:1px">SURGENTE S.R.L.</span>
+      </div>
+      <p>Equipamientos de bombeo y accesorios de las principales marcas del mercado. Soluciones integrales para agua potable, riego e industria en Caaguazú, Paraguay.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="#">Bombas sumergibles</a></li>
+        <li><a href="#">Motobombas</a></li>
+        <li><a href="#">Electrobombas</a></li>
+        <li><a href="#">Tuberías y accesorios</a></li>
+        <li><a href="#">Medidores de agua</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Perforación de pozos</a></li>
+        <li><a href="#">Instalación</a></li>
+        <li><a href="#">Servicio técnico</a></li>
+        <li><a href="#">Sistema contra incendio</a></li>
+        <li><a href="#">Asesoramiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Surgente S.R.L. — Todos los derechos reservados.</p>
+    <a href="#">Desarrollado por tu agencia →</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="wa-float" href="#" title="Escribinos por WhatsApp">💬</a>
+
+<script>
+const productos = [
+  { cat: 'sumergibles', marca: 'KSB', nombre: 'Bombas Sumergibles', desc: 'Para pozos artesianos. Acero inoxidable de alta durabilidad.', specs: ['1 a 10 HP', 'Acero inox', 'Pozo 4"'], badge: 'Más vendido', bg: '#e3f2fd' },
+  { cat: 'sumergibles', marca: 'Pedrollo', nombre: 'Electrobombas 4SR', desc: 'Multietapa para grandes profundidades. Alta eficiencia energética.', specs: ['2 a 8 HP', '4" y 6"', 'Alta presión'], badge: '', bg: '#e8f5e9' },
+  { cat: 'motobombas', marca: 'Valco', nombre: 'Motobomba periférica', desc: 'Ideal para domicilios y riego. Tanque hidroneumático incluido.', specs: ['0.5 a 3 HP', '220V', 'Riego'], badge: 'Popular', bg: '#fff3e0' },
+  { cat: 'motobombas', marca: 'SAH', nombre: 'Motobomba centrífuga', desc: 'Bomba centrífuga de alta capacidad. NEMA Standard.', specs: ['1 a 5 HP', 'Centrífuga', 'Industrial'], badge: '', bg: '#fce4ec' },
+  { cat: 'sumergibles', marca: 'Boyu', nombre: 'Bomba sumergible FP', desc: 'Para jardines, estanques y fuentes ornamentales. 220V/50Hz.', specs: ['FP-1000', 'FP-5000', 'FP-6000'], badge: 'Jardín', bg: '#e1f5fe' },
+  { cat: 'accesorios', marca: 'Surgente', nombre: 'Válvulas de bronce', desc: 'Válvulas de retención y paso en bronce. Distintos diámetros disponibles.', specs: ['1/2" a 3"', 'Bronce', 'Alta presión'], badge: '', bg: '#fff8e1' },
+  { cat: 'tuberias', marca: 'Surgente', nombre: 'Tuberías PEAD', desc: 'Cañería de polietileno de alta densidad para agua potable y riego.', specs: ['20mm a 110mm', 'PN10/PN16', 'Rollo y barra'], badge: '', bg: '#e8f5e9' },
+  { cat: 'medidores', marca: 'Surgente', nombre: 'Medidores de agua', desc: 'Medidores volumétricos para agua fría. Homologados y calibrados.', specs: ['1/2"', '3/4"', '1"'], badge: '', bg: '#ede7f6' },
+  { cat: 'accesorios', marca: 'Surgente', nombre: 'Acc. plásticos y bronce', desc: 'Codos, tees, uniones, tapones, niples. Plástico y bronce en todos los diámetros.', specs: ['Plástico', 'Bronce', 'Todos los diámetros'], badge: '', bg: '#fbe9e7' },
+];
+
+const iconos = { sumergibles:'🔩', motobombas:'⚙️', accesorios:'🔧', tuberias:'🔵', medidores:'📊' };
+
+function renderProductos(cat) {
+  const grid = document.getElementById('prodGrid');
+  const filtered = cat === 'todos' ? productos : productos.filter(p => p.cat === cat);
+  grid.innerHTML = filtered.map(p => `
+    <div class="prod-card">
+      <div class="prod-img" style="background:${p.bg}">
+        <div class="prod-img-bg"></div>
+        <span style="position:relative;z-index:1;font-size:64px">${iconos[p.cat] || '📦'}</span>
+        ${p.badge ? `<div class="prod-badge">${p.badge}</div>` : ''}
+      </div>
+      <div class="prod-body">
+        <div class="prod-marca">${p.marca}</div>
+        <div class="prod-name">${p.nombre}</div>
+        <div class="prod-desc">${p.desc}</div>
+        <div class="prod-specs">${p.specs.map(s => `<span class="spec-tag">${s}</span>`).join('')}</div>
+        <div class="prod-footer">
+          <a class="prod-cta" href="#contacto">Consultar precio →</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterCat(cat) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderProductos(cat);
+}
+
+renderProductos('todos');
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
